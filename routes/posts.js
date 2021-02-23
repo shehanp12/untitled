@@ -1,14 +1,13 @@
-const express = require('express');
-const  router = express.Router();
+import express from 'express';
 
 
-// router.get('/',((req, res) => {
-//     res.send('This Works')
-// }));
+import { getPosts, createPost } from '../controllers/posts.js';
 
-router.get('/',getPosts);
-router.post('/',createPost);
+const router = express.Router();
+
+router.get('/', getPosts);
+router.post('/', createPost);
+
+export default router;
 
 
-
-export  default  router;
